@@ -19,9 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initTheme();
 
-    initUploadArea();
+initUploadArea();
 
-    initGenerateButton();
+initGenerateButton();
+
+initPreview();
+
+    
+
+    
 
 });
 
@@ -147,6 +153,7 @@ function showSelectedFile(file) {
 // Generate Button
 // =============================
 
+
 function initGenerateButton() {
 
     const btn = document.getElementById("generateBtn");
@@ -168,5 +175,129 @@ function initGenerateButton() {
         alert("🚀 سيتم ربط الذكاء الاصطناعي في المرحلة القادمة.");
 
     });
+
+}
+// ============================================
+// Preview Area
+// ============================================
+
+function initPreview() {
+
+    const input = document.getElementById("videoInput");
+
+    const preview = document.querySelector(".preview");
+
+    if (!input || !preview) return;
+
+    input.addEventListener("change", () => {
+
+        if (!input.files.length) return;
+
+        const file = input.files[0];
+
+        preview.innerHTML = "";
+
+        // الصور
+
+        if (file.type.startsWith("image")) {
+
+            const img = document.createElement("img");
+
+            img.src = URL.createObjectURL(file);
+
+            img.className = "preview-image";
+
+            preview.appendChild(img);
+
+        }
+
+        // الفيديو
+
+        else if (file.type.startsWith("video")) {
+
+            const video = document.createElement("video");
+
+            video.src = URL.createObjectURL(file);
+
+            video.controls = true;
+
+            video.className = "preview-video";
+
+            preview.appendChild(video);
+
+        }
+
+    });
+
+}
+
+
+// ============================================
+// Progress Bar
+// ============================================
+
+function fakeUploadProgress() {
+
+    const progress = document.getElementById("uploadProgress");
+
+    if (!progress) return;
+
+    let value = 0;
+
+    const timer = setInterval(() => {
+
+        value += 5;
+        ┌───────────────┐
+│ 🖼️ صورة 1     │
+└───────────────┘
+
+┌───────────────┐
+│ 🖼️ صورة 2     │
+└───────────────┘
+
+┌───────────────┐
+│ 🖼️ صورة 3     │
+└───────────────┘
+
+        progress.value = value;
+
+        if (value >= 100) {
+
+            clearInterval(timer);
+
+        }
+
+    }, 80);
+
+}
+
+
+// ============================================
+// Remove File
+// ============================================
+
+function clearUpload() {
+
+    const input = document.getElementById("videoInput");
+
+    const preview = document.querySelector(".preview");
+
+    const dropArea = document.getElementById("dropArea");
+
+    if (!input || !preview || !dropArea) return;
+
+    input.value = "";
+
+    preview.innerHTML = "";
+
+    dropArea.innerHTML = `
+
+        اسحب الصور أو الفيديو هنا
+
+        <br><br>
+
+        أو اضغط للاختيار
+
+    `;
 
 }
