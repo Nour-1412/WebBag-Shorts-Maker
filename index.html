@@ -1,36 +1,254 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>WebBag Shorts Maker AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-content="أنشئ فيديوهات الشورتس والريلز بالذكاء الاصطناعي مجانًا">
+    <title>WebBag Shorts Maker AI | صانع فيديوهات الشورتس والريلز</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="description"
+        content="أنشئ فيديوهات Shorts و Reels احترافية بالذكاء الاصطناعي مجانًا مع WebBag.">
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+    <meta name="keywords"
+        content="AI Video Generator, Shorts Maker, Reels Maker, WebBag">
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
-rel="stylesheet">
+    <meta name="author" content="WebBag">
 
-<link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#071326">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" href="assets/logo/favicon.png">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-</body>
+    <!-- ================= HEADER ================= -->
 
-<script src="app.js"></script>
+    <header class="header">
 
-</html>
+        <div class="container">
+
+            <div class="logo">
+
+                <img src="assets/logo/logo.png" alt="WebBag">
+
+                <span>WebBag</span>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="#">الرئيسية</a></li>
+
+                    <li><a href="#">الأدوات</a></li>
+
+                    <li><a href="#">الدعم</a></li>
+
+                </ul>
+
+            </nav>
+
+            <button id="themeToggle">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <h1>
+
+                🎬 WebBag Shorts Maker AI
+
+            </h1>
+
+            <p>
+
+                أنشئ فيديوهات Shorts و Reels احترافية
+                بالذكاء الاصطناعي خلال دقائق.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <button id="generateBtn">
+
+                    ✨ ابدأ مجانًا
+
+                </button>
+
+                <button>
+
+                    ▶ مشاهدة مثال
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= STEPS ================= -->
+
+    <section class="steps">
+
+        <div class="container">
+
+            <div class="step">① الفكرة</div>
+
+            <div class="step">② الوسائط</div>
+
+            <div class="step">③ الصوت</div>
+
+            <div class="step">④ الموسيقى</div>
+
+            <div class="step">⑤ المعاينة</div>
+
+            <div class="step">⑥ التصدير</div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= WORKSPACE ================= -->
+
+    <main class="workspace">
+
+        <div class="container">
+
+            <!-- Script -->
+
+            <section class="card">
+
+                <h2>
+
+                    ✍️ فكرة الفيديو
+
+                </h2>
+
+                <textarea
+                    placeholder="اكتب فكرة الفيديو هنا..."></textarea>
+
+                <button>
+
+                    ✨ توليد النص بالذكاء الاصطناعي
+
+                </button>
+
+            </section>
+
+            <!-- Upload -->
+
+            <section class="card">
+
+                <h2>
+
+                    📂 رفع الملفات
+
+                </h2>
+
+                <div
+                    id="dropArea"
+                    class="drop-area">
+
+                    اسحب الصور أو الفيديو هنا
+
+                    <br>
+
+                    أو
+
+                    <br>
+
+                    اضغط للاختيار
+
+                    <input
+                        type="file"
+                        id="videoInput"
+                        hidden>
+
+                </div>
+
+            </section>
+
+            <!-- Preview -->
+
+            <section class="card">
+
+                <h2>
+
+                    📱 معاينة الفيديو
+
+                </h2>
+
+                <div class="preview">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </div>
+
+            </section>
+
+            <!-- Export -->
+
+            <section class="card">
+
+                <button class="export-btn">
+
+                    🎬 إنشاء الفيديو
+
+                </button>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 WebBag
+
+            جميع الحقوق محفوظة.
+
+        </p>
+
+    </footer>
+
+    <!-- JS
