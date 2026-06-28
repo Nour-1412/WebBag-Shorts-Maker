@@ -1,93 +1,169 @@
-/*
-=========================================
-WebBag Shorts Maker AI
-Version: 1.0.0
-Author: WebBag
-=========================================
-*/
+/**
+ * ============================================
+ * WebBag Shorts Maker AI
+ * Main Application
+ * Version : 1.0.0
+ * Author  : WebBag
+ * ============================================
+ */
+
+"use strict";
+
+// =============================
+// DOM Ready
+// =============================
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("🚀 WebBag Shorts Maker AI Started");
 
-    initializeApp();
+    console.log("🚀 WebBag Shorts Maker Started");
+
+    initTheme();
+
+    initUploadArea();
+
+    initGenerateButton();
+
 });
 
-function initializeApp() {
-    initTheme();
-    initNavigation();
-    initUploadArea();
-    initButtons();
-}
 
-// ===========================
+// =============================
 // Theme
-// ===========================
+// =============================
 
 function initTheme() {
+
     const themeBtn = document.getElementById("themeToggle");
 
     if (!themeBtn) return;
 
     themeBtn.addEventListener("click", () => {
+
         document.body.classList.toggle("light-mode");
-    });
-}
 
-// ===========================
-// Navigation
-// ===========================
-
-function initNavigation() {
-
-    const menuBtn = document.getElementById("menuToggle");
-    const nav = document.querySelector(".nav-links");
-
-    if (!menuBtn || !nav) return;
-
-    menuBtn.addEventListener("click", () => {
-        nav.classList.toggle("active");
     });
 
 }
 
-// ===========================
+
+// =============================
 // Upload Area
-// ===========================
+// =============================
 
 function initUploadArea() {
 
     const dropArea = document.getElementById("dropArea");
+
     const input = document.getElementById("videoInput");
 
     if (!dropArea || !input) return;
 
+    // Click
+
     dropArea.addEventListener("click", () => {
+
         input.click();
+
     });
 
-    input.addEventListener("change", () => {
+    // File Selected
 
-        if (!input.files.length) return;
+    input.addEventListener("change", (e) => {
 
-        const file = input.files[0];
+        if (!e.target.files.length) return;
 
-        console.log("Selected:", file.name);
+        const file = e.target.files[0];
+
+        showSelectedFile(file);
+
+    });
+
+    // Drag Events
+
+    ["dragenter", "dragover"].forEach(eventName => {
+
+        dropArea.addEventListener(eventName, e => {
+
+            e.preventDefault();
+
+            dropArea.classList.add("dragging");
+
+        });
+
+    });
+
+    ["dragleave", "drop"].forEach(eventName => {
+
+        dropArea.addEventListener(eventName, e => {
+
+            e.preventDefault();
+
+            dropArea.classList.remove("dragging");
+
+        });
+
+    });
+
+    // Drop File
+
+    dropArea.addEventListener("drop", e => {
+
+        const files = e.dataTransfer.files;
+
+        if (!files.length) return;
+
+        showSelectedFile(files[0]);
 
     });
 
 }
 
-// ===========================
-// Buttons
-// ===========================
 
-function initButtons() {
+// =============================
+// Show File
+// =============================
 
-    const generateBtn = document.getElementById("generateBtn");
+function showSelectedFile(file) {
 
-    if (!generateBtn) return;
+    const dropArea = document.getElementById("dropArea");
 
-    generateBtn.addEventListener("click", () => {
+    dropArea.innerHTML = `
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <br><br>
+
+        <strong>${file.name}</strong>
+
+        <br>
+
+        ${(file.size / 1024 / 1024).toFixed(2)} MB
+
+    `;
+
+}
+
+
+// =============================
+// Generate Button
+// =============================
+
+function initGenerateButton() {
+
+    const btn = document.getElementById("generateBtn");
+
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+
+        const textarea = document.querySelector("textarea");
+
+        if (!textarea.value.trim()) {
+
+            alert("يرجى كتابة فكرة الفيديو أولاً.");
+
+            return;
+
+        }
 
         alert("🚀 سيتم ربط الذكاء الاصطناعي في المرحلة القادمة.");
 
