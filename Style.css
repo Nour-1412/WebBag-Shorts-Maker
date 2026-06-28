@@ -1,10 +1,9 @@
-/* ==========================================
-   WebBag Shorts Maker AI
-   Style.css
-   Version 1.0
-========================================== */
+/*=========================================
+  WebBag Studio
+  AI Shorts & Reels Maker
+=========================================*/
 
-/* ========= Reset ========= */
+/* RESET */
 
 *{
     margin:0;
@@ -24,71 +23,81 @@ body{
 
     color:#fff;
 
-    line-height:1.7;
+    overflow-x:hidden;
 
 }
 
-/* ========= Variables ========= */
+/* VARIABLES */
 
 :root{
 
     --primary:#1677ff;
 
-    --primary-hover:#3b8cff;
+    --secondary:#3b82f6;
 
     --background:#071326;
 
-    --card:#10213f;
+    --sidebar:#0b1830;
 
-    --text:#ffffff;
-
-    --text-light:#c7d2fe;
+    --panel:#10213f;
 
     --border:rgba(255,255,255,.08);
 
+    --text:#ffffff;
+
+    --text-light:#b9c6e5;
+
     --radius:18px;
 
-    --shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+/* APP */
+
+.app{
+
+    display:grid;
+
+    grid-template-columns:260px 1fr;
+
+    min-height:100vh;
 
 }
 
-/* ========= Container ========= */
-
-.container{
-
-    width:min(1200px,92%);
-
-    margin:auto;
-
-}
-
-/* ========= Header ========= */
+/* HEADER */
 
 .header{
 
-    position:sticky;
+    position:fixed;
 
     top:0;
 
-    z-index:999;
+    left:0;
 
-    background:rgba(7,19,38,.85);
+    width:100%;
 
-    backdrop-filter:blur(15px);
+    height:75px;
+
+    background:#08182d;
 
     border-bottom:1px solid var(--border);
+
+    z-index:999;
 
 }
 
 .header .container{
+
+    width:min(1400px,95%);
+
+    margin:auto;
+
+    height:75px;
 
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
-
-    padding:18px 0;
 
 }
 
@@ -106,619 +115,89 @@ body{
 
     width:42px;
 
-    height:42px;
-
 }
 
-.logo span{
+.logo h2{
 
     font-size:24px;
-
-    font-weight:700;
-
-}
-
-nav ul{
-
-    display:flex;
-
-    list-style:none;
-
-    gap:28px;
-
-}
-
-nav a{
-
-    color:#fff;
-
-    text-decoration:none;
-
-    transition:.3s;
-
-}
-
-nav a:hover{
-
-    color:var(--primary);
 
 }
 
 #themeToggle{
 
-    width:45px;
+    width:44px;
 
-    height:45px;
+    height:44px;
 
     border:none;
 
     border-radius:50%;
 
-    background:var(--card);
+    background:var(--panel);
 
     color:#fff;
 
     cursor:pointer;
+
+}
+
+/* SIDEBAR */
+
+.sidebar{
+
+    margin-top:75px;
+
+    background:var(--sidebar);
+
+    border-left:1px solid var(--border);
+
+    padding:25px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    margin-bottom:10px;
 
     transition:.3s;
 
 }
 
-#themeToggle:hover{
+.sidebar li:hover{
+
+    background:#1677ff33;
+
+}
+
+.sidebar li.active{
 
     background:var(--primary);
 
 }
-/* ==========================================
-   HERO SECTION
-========================================== */
 
-.hero{
+.sidebar i{
 
-    padding:90px 0;
+    width:22px;
 
     text-align:center;
 
 }
 
-.hero h1{
-
-    font-size:58px;
-
-    font-weight:800;
-
-    margin-bottom:20px;
-
-    color:#fff;
-
-}
-
-.hero p{
-
-    max-width:750px;
-
-    margin:auto;
-
-    font-size:22px;
-
-    color:var(--text-light);
-
-    line-height:1.8;
-
-}
-
-.hero-buttons{
-
-    margin-top:45px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-}
-
-.hero-buttons button{
-
-    padding:18px 38px;
-
-    border:none;
-
-    border-radius:50px;
-
-    font-size:18px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-}
-
-.hero-buttons button:first-child{
-
-    background:var(--primary);
-
-    color:#fff;
-
-    box-shadow:0 15px 40px rgba(22,119,255,.35);
-
-}
-
-.hero-buttons button:first-child:hover{
-
-    background:var(--primary-hover);
-
-    transform:translateY(-4px);
-
-}
-
-.hero-buttons button:last-child{
-
-    background:transparent;
-
-    border:2px solid var(--primary);
-
-    color:#fff;
-
-}
-
-.hero-buttons button:last-child:hover{
-
-    background:var(--primary);
-
-}
-
-
-/* ==========================================
-   STEPS
-========================================== */
-
-.steps{
-
-    margin:60px auto;
-
-}
-
-.steps .container{
-
-    display:grid;
-
-    grid-template-columns:repeat(6,1fr);
-
-    gap:18px;
-
-}
-
-.step{
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    padding:18px;
-
-    text-align:center;
-
-    transition:.35s;
-
-}
-
-.step:hover{
-
-    transform:translateY(-6px);
-
-    border-color:var(--primary);
-
-}
-/* ==========================================
-   WORKSPACE
-========================================== */
-
-.workspace{
-
-    padding:70px 0;
-
-}
-
-.workspace .container{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:30px;
-
-}
-
-/* ==========================================
-   CARDS
-========================================== */
-
-.card{
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:22px;
-
-    padding:28px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
-
-    transition:.35s;
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:var(--primary);
-
-}
-
-.card h2{
-
-    font-size:24px;
-
-    margin-bottom:20px;
-
-}
-
-/* ==========================================
-   TEXTAREA
-========================================== */
-
-textarea{
-
-    width:100%;
-
-    height:180px;
-
-    background:#0b1d37;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:16px;
-
-    color:#fff;
-
-    padding:18px;
-
-    resize:none;
-
-    outline:none;
-
-    font-size:17px;
-
-    margin-bottom:18px;
-
-}
-
-textarea::placeholder{
-
-    color:#8ca3c7;
-
-}
-
-/* ==========================================
-   BUTTONS
-========================================== */
-
-.card button{
-
-    width:100%;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:var(--primary);
-
-    color:#fff;
-
-    font-size:18px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-}
-
-.card button:hover{
-
-    background:var(--primary-hover);
-
-}
-
-/* ==========================================
-   UPLOAD AREA
-========================================== */
-
-.drop-area{
-
-    border:2px dashed rgba(255,255,255,.15);
-
-    border-radius:18px;
-
-    min-height:220px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    cursor:pointer;
-
-    color:#b8c7e5;
-
-    transition:.35s;
-
-    padding:30px;
-
-}
-
-.drop-area:hover{
-
-    border-color:var(--primary);
-
-    background:rgba(22,119,255,.08);
-
-}
-
-.dragging{
-
-    border-color:#3b8cff !important;
-
-    background:rgba(59,140,255,.15);
-
-}
-
-/* ==========================================
-   PREVIEW
-========================================== */
-
-.preview{
-
-    height:500px;
-
-    border-radius:20px;
-
-    background:#08182d;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-}
-
-.preview img,
-
-.preview video{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-.preview i{
-
-    font-size:90px;
-
-    color:#3b8cff;
-
-}
-/*=========================================
-  ANIMATIONS
-=========================================*/
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(40px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-.hero{
-
-    animation:fadeUp .8s ease;
-
-}
-
-.card{
-
-    animation:fadeUp .9s ease;
-
-}
-
-/*=========================================
-  SCROLLBAR
-=========================================*/
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:#08182d;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#1677ff;
-
-    border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#3b8cff;
-
-}
-
-/*=========================================
-  SELECTION
-=========================================*/
-
-::selection{
-
-    background:#1677ff;
-
-    color:#fff;
-
-}
-
-/*=========================================
-  BACKGROUND EFFECT
-=========================================*/
-
-body{
-
-    background:
-    radial-gradient(circle at top right,#1677ff22,transparent 35%),
-    radial-gradient(circle at bottom left,#00d4ff22,transparent 35%),
-    #071326;
-
-}
-
-/*=========================================
-  GLASS EFFECT
-=========================================*/
-
-.card{
-
-    backdrop-filter:blur(25px);
-
-    -webkit-backdrop-filter:blur(25px);
-
-}
-
-/*=========================================
-  RESPONSIVE
-=========================================*/
-
-@media(max-width:992px){
-
-    .workspace .container{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .steps .container{
-
-        grid-template-columns:repeat(3,1fr);
-
-    }
-
-    .hero h1{
-
-        font-size:42px;
-
-    }
-
-}
-
-@media(max-width:768px){
-
-    nav{
-
-        display:none;
-
-    }
-
-    .hero{
-
-        padding:70px 0;
-
-    }
-
-    .hero h1{
-
-        font-size:34px;
-
-    }
-
-    .hero p{
-
-        font-size:18px;
-
-    }
-
-    .hero-buttons{
-
-        flex-direction:column;
-
-    }
-
-    .steps .container{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-    .preview{
-
-        height:420px;
-
-    }
-
-}
-
-@media(max-width:480px){
-
-    .steps .container{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .preview{
-
-        height:350px;
-
-    }
-
-  }
