@@ -3,323 +3,670 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>
-WebBag Studio | AI Shorts & Reels Maker
-</title>
+    <title>WebBag AI Studio</title>
 
-<meta name="description"
-content="أنشئ فيديوهات Shorts و Reels بالذكاء الاصطناعي مجانًا مع WebBag Studio.">
+    <meta name="description"
+          content="أنشئ فيديوهات Shorts و Reels وصور ومحتوى بالذكاء الاصطناعي مجانًا.">
 
-<meta name="theme-color"
-content="#071326">
+    <meta name="theme-color"
+          content="#071326">
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+    <meta name="robots"
+          content="index,follow">
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+    <meta name="author"
+          content="WebBag">
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
-rel="stylesheet">
+    <!-- Fonts -->
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-<link rel="stylesheet"
-href="style.css">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ===========================
+     HEADER
+=========================== -->
 
 <header class="header">
 
-<div class="container">
+    <div class="container">
 
-<div class="logo">
+        <div class="logo">
 
-<img src="assets/logo/logo.png"
-alt="WebBag">
+            <img src="assets/logo/logo.png"
+                 alt="WebBag">
 
-<h2>WebBag Studio</h2>
+            <div>
 
-</div>
+                <h2>WebBag AI Studio</h2>
 
-<div class="header-actions">
+                <small>Create Smart • Free</small>
 
-<button id="themeToggle">
+            </div>
 
-<i class="fa-solid fa-moon"></i>
+        </div>
 
-</button>
+        <nav>
 
-</div>
+            <a href="#">الرئيسية</a>
 
-</div>
+            <a href="#">الأدوات</a>
 
-</header>
+            <a href="#">المميزات</a>
 
-<!-- ================= APP ================= -->
+            <a href="#">الدعم</a>
 
-<div class="app">
+        </nav>
 
-<!-- ================= SIDEBAR ================= -->
+        <button id="themeToggle">
 
-<aside class="sidebar">
-
-<ul>
-
-<li class="active">
-
-<i class="fa-solid fa-house"></i>
-
-<span>Dashboard</span>
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-video"></i>
-
-<span>Projects</span>
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-upload"></i>
-
-<span>Upload</span>
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-pen"></i>
-
-<span>Script</span>
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-microphone"></i>
-
-<span>Voice</span>
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-music"></i>
-
-<span>Music</span>
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-film"></i>
-
-<span>Timeline</span>
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-download"></i>
-
-<span>Export</span>
-
-</li>
-
-</ul>
-
-</aside>
-
-<!-- ================= MAIN ================= -->
-
-<main class="workspace">
-
-<section class="workspace-header">
-
-<h1>
-
-🎬 Shorts & Reels Maker
-
-</h1>
-
-<p>
-
-أنشئ فيديوهات قصيرة احترافية
-باستخدام الذكاء الاصطناعي.
-
-</p>
-
-</section>
-    <!-- ================= SCRIPT PANEL ================= -->
-
-<div class="workspace-grid">
-
-    <section class="panel">
-
-        <h2>
-
-            ✍️ Script Generator
-
-        </h2>
-
-        <textarea
-            id="scriptInput"
-            placeholder="اكتب فكرة الفيديو هنا..."></textarea>
-
-        <button id="generateBtn">
-
-            ✨ إنشاء السكربت بالذكاء الاصطناعي
+            <i class="fa-solid fa-moon"></i>
 
         </button>
 
-    </section>
+    </div>
 
-    <!-- ================= UPLOAD PANEL ================= -->
+</header>
 
-    <section class="panel">
+<!-- ===========================
+     HERO
+=========================== -->
 
-        <h2>
+<section class="hero">
 
-            📂 Upload Media
+    <div class="container">
 
-        </h2>
+        <span class="hero-badge">
 
-        <div
-            id="dropArea"
-            class="drop-area">
+            🚀 الإصدار التجريبي المجاني
 
-            <i class="fa-solid fa-cloud-arrow-up"></i>
+        </span>
 
-            <h3>
+        <h1>
 
-                اسحب الصور أو الفيديو هنا
+            ماذا تريد أن تنشئ اليوم؟
 
-            </h3>
-
-            <p>
-
-                أو اضغط لاختيار الملفات
-
-            </p>
-
-            <input
-                type="file"
-                id="videoInput"
-                accept="image/*,video/*"
-                multiple
-                hidden>
-
-        </div>
-
-    </section>
-
-</div>
-    <!-- ================= PREVIEW ================= -->
-
-<div class="workspace-grid">
-
-    <section class="panel">
-
-        <h2>
-
-            📱 Video Preview
-
-        </h2>
-
-        <div class="preview">
-
-            <i class="fa-solid fa-play"></i>
-
-        </div>
-
-    </section>
-
-    <!-- ================= EXPORT ================= -->
-
-    <section class="panel">
-
-        <h2>
-
-            🚀 Export Video
-
-        </h2>
-
-        <div class="export-box">
-
-            <button class="export-btn">
-
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-                إنشاء الفيديو
-
-            </button>
-
-            <button class="download-btn">
-
-                <i class="fa-solid fa-download"></i>
-
-                تنزيل الفيديو
-
-            </button>
-
-        </div>
-
-    </section>
-
-</div>
-
-<!-- ================= TIMELINE ================= -->
-
-<section class="panel timeline">
-
-    <h2>
-
-        🎞 Timeline
-
-    </h2>
-
-    <div class="timeline-area">
+        </h1>
 
         <p>
 
-            سيتم عرض المشاهد هنا بعد رفع الصور أو الفيديو.
+            منصة WebBag AI Studio تساعدك على إنشاء فيديوهات وصور ومحتوى احترافي
+            بالذكاء الاصطناعي مجانًا داخل المتصفح.
 
         </p>
+                <!-- ===========================
+             AI TOOLS
+        =========================== -->
+
+        <div class="tools-grid">
+
+            <div class="tool-card active">
+
+                <div class="tool-icon">
+
+                    🎬
+
+                </div>
+
+                <h3>
+
+                    Shorts
+
+                </h3>
+
+                <p>
+
+                    إنشاء فيديوهات Shorts بالذكاء الاصطناعي.
+
+                </p>
+
+            </div>
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+
+                    📱
+
+                </div>
+
+                <h3>
+
+                    Reels
+
+                </h3>
+
+                <p>
+
+                    إنشاء فيديوهات Reels احترافية.
+
+                </p>
+
+            </div>
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+
+                    ▶️
+
+                </div>
+
+                <h3>
+
+                    YouTube
+
+                </h3>
+
+                <p>
+
+                    إنشاء فيديوهات يوتيوب طويلة.
+
+                </p>
+
+            </div>
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+
+                    🎙️
+
+                </div>
+
+                <h3>
+
+                    Podcast
+
+                </h3>
+
+                <p>
+
+                    إنشاء حلقات Podcast بسهولة.
+
+                </p>
+
+            </div>
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+
+                    📢
+
+                </div>
+
+                <h3>
+
+                    Ads
+
+                </h3>
+
+                <p>
+
+                    إنشاء إعلانات احترافية.
+
+                </p>
+
+            </div>
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+
+                    🖼️
+
+                </div>
+
+                <h3>
+
+                    AI Images
+
+                </h3>
+
+                <p>
+
+                    إنشاء صور بالذكاء الاصطناعي.
+
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
 
 </section>
 
-</main>
+<!-- ===========================
+     WHY WEBBAG
+=========================== -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                لماذا WebBag؟
+
+            </h2>
+
+            <p>
+
+                منصة مجانية بالكامل لمساعدة صناع المحتوى.
+
+            </p>
+
+        </div>
+
+        <div class="features-grid">
+
+            <div class="feature">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>
+
+                    سريع
+
+                </h3>
+
+                <p>
+
+                    إنشاء المحتوى في دقائق.
+
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <h3>
+
+                    ذكاء اصطناعي
+
+                </h3>
+
+                <
+                    <p>
+
+    أدوات تعتمد على أحدث تقنيات الذكاء الاصطناعي.
+
+</p>
 
 </div>
 
-<!-- ================= FOOTER ================= -->
+<div class="feature">
 
-<footer class="footer">
+    <i class="fa-solid fa-gift"></i>
+
+    <h3>
+
+        مجاني بالكامل
+
+    </h3>
 
     <p>
 
-        © 2026 WebBag Studio
-
-        جميع الحقوق محفوظة.
+        جميع أدوات WebBag مجانية للجميع.
 
     </p>
+
+</div>
+
+<div class="feature">
+
+    <i class="fa-solid fa-cloud"></i>
+
+    <h3>
+
+        يعمل من المتصفح
+
+    </h3>
+
+    <p>
+
+        لا يحتاج إلى تثبيت أي برامج.
+
+    </p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+    <!-- ===========================
+     AI WORKSPACE
+=========================== -->
+
+<section class="workspace">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                🎬 AI Shorts Studio
+
+            </h2>
+
+            <p>
+
+                ابدأ بإنشاء فيديو احترافي في خطوات بسيطة.
+
+            </p>
+
+        </div>
+
+        <div class="workspace-grid">
+
+            <!-- LEFT -->
+
+            <div class="workspace-left">
+
+                <div class="card">
+
+                    <h3>
+
+                        💡 فكرة الفيديو
+
+                    </h3>
+
+                    <textarea
+                        id="ideaInput"
+                        placeholder="اكتب فكرة الفيديو هنا..."></textarea>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+
+                        ✍️ السكربت
+
+                    </h3>
+
+                    <textarea
+                        id="scriptInput"
+                        placeholder="سيظهر السكربت هنا..."></textarea>
+
+                    <button
+                        id="generateScript">
+
+                        إنشاء السكربت
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="workspace-right">
+
+                <div class="card">
+
+                    <h3>
+
+                        📱 معاينة الفيديو
+
+                    </h3>
+
+                    <div class="preview-box">
+
+                        <i class="fa-solid fa-play"></i>
+
+                        <span>
+
+                            ستظهر المعاينة هنا
+
+                        </span>
+
+                    </div>
+
+    </div>
+                                <!-- Upload -->
+
+                <div class="card">
+
+                    <h3>
+
+                        📂 رفع الصور والفيديو
+
+                    </h3>
+
+                    <div class="upload-box">
+
+                        <input
+                            type="file"
+                            id="mediaUpload"
+                            multiple
+                            accept="image/*,video/*">
+
+                        <p>
+
+                            اسحب الملفات هنا أو اضغط للاختيار
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Voice -->
+
+                <div class="card">
+
+                    <h3>
+
+                        🎤 التعليق الصوتي
+
+                    </h3>
+
+                    <select id="voiceSelect">
+
+                        <option>
+
+                            صوت عربي (ذكر)
+
+                        </option>
+
+                        <option>
+
+                            صوت عربي (أنثى)
+
+                        </option>
+
+                        <option>
+
+                            English Male
+
+                        </option>
+
+                        <option>
+
+                            English Female
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Generate -->
+
+                <div class="card">
+
+                    <button
+                        id="createVideo"
+                        class="primary-btn">
+
+                        🚀 إنشاء الفيديو
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- ===========================
+     WHY WEBBAG
+=========================== -->
+
+<section class="why-webbag">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+
+                لماذا WebBag AI Studio؟
+
+            </h2>
+
+            <p>
+
+                منصة متكاملة لصناع المحتوى، مصممة لتكون مجانية وسهلة وسريعة.
+
+            </p>
+
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>سريع</h3>
+
+                <p>
+
+                    إنشاء المحتوى خلال دقائق.
+
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <h3>ذكاء اصطناعي</h3>
+
+                <p>
+
+                    أحدث تقنيات الذكاء الاصطناعي.
+
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <i class="fa-solid fa-gift"></i>
+
+                <h3>مجاني</h3>
+
+                <p>
+
+                    جميع الأدوات مجانية.
+
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <i class="fa-solid fa-cloud"></i>
+
+                <h3>يعمل من المتصفح</h3>
+
+                <p>
+
+                    لا يحتاج إلى تثبيت.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-logo">
+
+            <img
+                src="assets/logo/logo.png"
+                alt="WebBag">
+
+            <h3>
+
+                WebBag AI Studio
+
+            </h3>
+
+        </div>
+
+        <p>
+
+            © 2026 WebBag AI Studio
+
+            جميع الحقوق محفوظة.
+
+        </p>
+
+    </div>
 
 </footer>
 
@@ -328,5 +675,4 @@ alt="WebBag">
 </body>
 
 </html>
-
- 
+                    
